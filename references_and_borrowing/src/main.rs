@@ -18,6 +18,27 @@ fn main() {
     *x += 2;
     println!("This is the new x = {}", x);
    let _s: String = format!("{} {}", m1, m2);
+
+
+
+   //Simultaneous Aliasing and Mutation
+   let mut v: Vec<i32> = vec![1,2,3];
+   let num: &i32 = &v[2];
+   println!("This is the val of num {}", num);
+   v.push(3);
+   println!("This is the new array {:?}", v);
+
+   println!("This is the array val at index 3 = {}", v[3]);
+
+   //Mutable Reference
+   let mut v2: Vec<i32> = vec![2,9,4,0];
+   let num2:  &mut i32 = &mut v2[2];
+
+   *num2 += 1;
+
+   println!("Third element is {}", *num2);
+
+   println!("Vector is now {:?}", v2);
 }
 
 // References
