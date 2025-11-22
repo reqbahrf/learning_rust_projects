@@ -2,11 +2,11 @@ fn main() {
 // References
    let m1: String = String::from("Hello");
    let m2: String = String::from("World");
-    great(&m1, &m2);
-    //Implicit reference
-    let s_len1: usize = m1.len();
-    //Explicit reference
-    let s_len2: usize = str::len(&m2);
+   great(&m1, &m2);
+   //Implicit reference
+   let s_len1: usize = m1.len();
+   //Explicit reference
+   let s_len2: usize = str::len(&m2);
     println!("This is slen1 {s_len1} and this is slen2 {s_len2}");
 
 
@@ -33,12 +33,21 @@ fn main() {
    //Mutable Reference
    let mut v2: Vec<i32> = vec![2,9,4,0];
    let num2:  &mut i32 = &mut v2[2];
-
    *num2 += 1;
-
    println!("Third element is {}", *num2);
 
+   let first: &mut i32 = first( &mut v2);
+   *first += 1;
+
+   println!("This is the first element {}", v2[0]);
    println!("Vector is now {:?}", v2);
+
+
+}
+
+fn first(v_r: &mut Vec<i32>) -> &mut i32 {
+    let s_ref: &mut i32 = &mut v_r[0];
+    s_ref
 }
 
 // References
