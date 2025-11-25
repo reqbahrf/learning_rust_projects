@@ -21,8 +21,17 @@ fn main() {
     // *y += 1;
 
     // println!("{} {}", point[0], point[1]);
+    // let name = String::from("Ferris");
+    // award_phd(&name);
+    // println!("{}", name);
 
 }
+
+// fn award_phd(name: &String){
+//     let mut name = *name;
+//     name.push_str(", Ph.D.");
+
+// }
 
 fn multiple_in_place(v: &mut Vec<i32>) {
     for n in v {
