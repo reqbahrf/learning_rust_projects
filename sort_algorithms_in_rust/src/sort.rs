@@ -1,3 +1,5 @@
+use std::usize;
+
 pub fn bubble_sort(vec: &mut Vec<usize>) {
     let n: usize = vec.len();
     for i in 0..(n-1) {
@@ -25,4 +27,19 @@ pub fn selection_sort(vec: &mut Vec<usize>) {
       vec.swap(i, min_index);
     }
    }
+}
+
+pub fn insertion_sort(vec: &mut Vec<usize>) {
+  let n = vec.len();
+
+  for i in 1..n {
+    let temp = vec[i];
+    let mut j  = i;
+
+    while j > 0 && temp < vec[j - 1] {
+      vec[j] = vec[j - 1];
+      j -= 1
+    }
+    vec[j] = temp;
+  }
 }
